@@ -21,3 +21,6 @@ Generate one migration (Note: Make sure you already create the databse before ru
 Apply migrations in the database
     flask db upgrade
 
+To run your application
+   
+ python run.py

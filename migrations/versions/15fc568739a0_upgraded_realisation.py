@@ -26,16 +26,7 @@ def upgrade():
     sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_table('realisations',
-    sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('name', sa.String(length=150), nullable=False),
-    sa.Column('description', sa.Text(), nullable=False),
-    sa.Column('image', sa.String(length=255), nullable=True),
-    sa.Column('price', sa.Float(), nullable=False),
-    sa.Column('category', sa.Text(), nullable=False),
-    sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=True),
-    sa.PrimaryKeyConstraint('id')
-    )
+
     op.drop_table('contact')
     # ### end Alembic commands ###
 
@@ -53,6 +44,6 @@ def downgrade():
     mysql_default_charset='utf8mb4',
     mysql_engine='InnoDB'
     )
-    op.drop_table('realisations')
+    # op.drop_table('realisations')
     op.drop_table('contacts')
     # ### end Alembic commands ###
